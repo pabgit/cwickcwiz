@@ -18,9 +18,10 @@ header {
     font-size: large;
 }
 
-h2 {
-    /* text-align: center; */
+h1 {
+    position: relative;
     font-size: xx-large;
+    padding: 20px;
 }
 
 section {
@@ -37,8 +38,21 @@ section {
     border-radius: 5px; /* Set the radius to control the amount of rounding */
     cursor: pointer;
     font-size: 100%;
+    text-decoration: none;
 }
 
 .rounded-button:hover {
     background-color: #910e91;
+}
+
+.rounded-button a{
+    color:white;
+}
+
+.answers{
+    width:90%;
+    margin:1%;
+    padding: 1%;
+    background-color: #910e91;
+    color:#460746
 }

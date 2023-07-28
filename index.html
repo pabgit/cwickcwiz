@@ -6,20 +6,34 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- <section class="header-container"> -->
-        <header>
-        <header class="top-left-header">View Highscores</header>
-        <header class="top-right-header"><strong>Time: 0</strong></header>
-        </header>
-    <!-- </section> -->
+    
+    <header>
+            <header class="top-left-header"><a href="./highscores.html" style="text-decoration: none;">View Highscores</a></header>
+            <header class="top-right-header" id="timerDisplay">Time:10</header>
+    </header>
+    
     <br>
     <main>
         <section class="box">
-        <h2>Coding Quiz Challenge</h2>
+        <h1>Coding Quiz Challenge</h1>
         <p style="text-align: center;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto animi atque maiores tempora delectus, voluptatum, corrupti quam minima a placeat praesentium totam, architecto magnam ipsa repudiandae nobis omnis id exercitationem?</p>
-        <button class="rounded-button">Start Quiz</button>
+        <button  class="rounded-button" id="startButton">Start Quiz</button>
+        </section>
+        <section class="quiz-container">
+        <h2 id="question"></h2>
+        <button class="answers" id="option1"></button>
+        <button class="answers" id="option2"></button>
+        <button class="answers" id="option3"></button>
+        <button class="answers" id="option4"></button>
+        <h3 id="correct"></h3>
+        </section>
+        <section class="score">
+            <h5 id="finalscore"></h5>
+            <input type="text" placeholder="enter initials" id="user">
+        <button>save</button>
         </section>
     </main>
     <script src="./script.js"></script>
 </body>
 </html>
+
