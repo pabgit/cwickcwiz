@@ -1,6 +1,9 @@
 var startButton = document.getElementById('startButton');
-
-let timerCount=90
+// const hiddenElement = document.getElementById("hiddenElement");
+var box = document.querySelector('.box')
+var submitBtn = document.querySelector('#submitBtn')
+var user = document.querySelector('#user')
+let timerCount=5
 var timerDisplay = document.getElementById('timerDisplay');
 let timer;
 let quizContainer = document.querySelector('.quiz-container');
@@ -24,17 +27,27 @@ startButton.addEventListener('click', function() {
   displayQuestion()
 })
 
+function endQuiz(){
+  clearInterval(timer)
+  box.style.display = "none"
+  quizContainer.style.display = "none"
+  var hiddenElement = document.querySelector(".hiddenElement")
+  hiddenElement.style.display = "block"
+}
 function startQuizTimer() {
 
-  timerCount = 20;
+  // timerCount = 5;
   timer = setInterval(function() {
-    timerDisplay.innerText="Time: " + timerCount
     timerCount--;
-
+    
+    timerDisplay.innerText="Time: " + timerCount
     if (timerCount <= 0) {
-  
+      // setTime();
         endQuiz()
-        // "endQuiz()" Calculate and present "Your final score is 30.", enter initials and submit.
+
+        // "endQuiz()" h5 All done! h5 
+        // <p/> "Your final score is 30." enter initials: </p> and submitButton.
+        // Calculate and present 
         // Highscore page with options to Go Back and ClearHighscores
         // Go Back button = return to init
 
@@ -111,48 +124,27 @@ function checkButton(event){
   }
 }
 
-function endQuiz () {
-  clearInterval(timer);
-  quizContainer.style.display = "none"
+function submit () {
+  var initials = user.value
+  var score = initials + " : " + timerCount
+  localStorage.setItem("score", score);
+  // redirect here!
 }
-// 
-
+submitBtn.addEventListener("click", submit)
+// function endQuiz () {
+//   let score = document.getElementById('score');
+//   function showHiddenElement() {
+//     const hiddenElement = document.getElementById('hiddenElement');
+//     hiddenElement.style.display = 'inline'
+//   }  
+//   clearInterval(timer);
+//   hiddenElement.style.display = "none"
+// }
 // Attach event listener to start button to call startGame function on click
 // startButton.addEventListener("click", startQuiz);
-
-// var startQuiz = document.querySelector(".start-button");
-
+// 
 // The startGame function is called when the start button is clicked
-// 
-// 
-// The init function is called when the page loads 
-// function init() {
-//   getCorrect();
-//   getWrong();
-//   set in local storage
-// }
-// multiple choice
-// 
-// var timerElement = document.querySelector(".timer-count");
-// 
-// var correct = "";
-// var wrong = "";
-// 
-// var timer;
-// var timerCount;
-
-// The endQuiz function is called when all questions are answered or time expires
-
-// function endQuiz() {
-// Generate score based on Correct!(true) and Wrong!(false) 
-// answers stored in local storage
-// present score and enter initials then press submit
-// list scores in ascending order, high on top
-// } 
-// 
-// Calls init() so that it fires when page opened
-// init();
-// 
+//
 // var clearHighScores = document.querySelector(".clearHighScores-button");
 
 // function Clear Highscores() {

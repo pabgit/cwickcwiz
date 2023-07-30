@@ -9,7 +9,7 @@
     
     <header>
             <header class="top-left-header"><a href="./highscores.html" style="text-decoration: none;">View Highscores</a></header>
-            <header class="top-right-header" id="timerDisplay">Time:10</header>
+            <header class="top-right-header" id="timerDisplay"><strong>Time:0</strong></header>
     </header>
     
     <br>
@@ -27,10 +27,10 @@
         <button class="answers" id="option4"></button>
         <h3 id="correct"></h3>
         </section>
-        <section class="score">
-            <h5 id="finalscore"></h5>
+        <section class="hiddenElement" style="display: none;">
+            <h2 id="finalscore">All done!</h2>
             <input type="text" placeholder="enter initials" id="user">
-        <button>save</button>
+        <button id="submitBtn"> <a href="./highscores.html"style="text-decoration: none;">Submit</a></button>
         </section>
     </main>
     <script src="./script.js"></script>
